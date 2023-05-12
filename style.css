@@ -1,0 +1,115 @@
+:root {
+  --color-primary-1: #302e33;
+  --color-secondary-1: #d00000;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Raleway", sans-serif;
+}
+
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--color-primary-1);
+  color: #ffffff;
+  background-image: linear-gradient(11deg, transparent 0%, #000000 90%), linear-gradient(45deg, #333333, transparent), url(bg__.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* !----------------------------------- */
+.container {
+  width: 100%;
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* !----------------------------------- */
+
+.app {
+  z-index: 10;
+}
+/* !------------------------------------ */
+.search-container {
+}
+
+/* !----------------------------------- */
+input {
+  width: 40rem;
+  font-size: 2.8rem;
+  height: 6rem;
+  outline: none;
+  border: none;
+  background-color: #242424;
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  padding: 2rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+input:focus {
+  background-color: #ffffff15;
+}
+input::placeholder {
+  transition: all 0.2s;
+  font-size: 2.4rem;
+  color: #555;
+}
+input:focus::placeholder {
+  transform: translateY(-3rem);
+  opacity: 0;
+  color: #999;
+}
+
+.input-group {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.btn-group {
+  height: 6rem;
+  border: 3px solid var(--color-secondary-1);
+  background-color: var(--color-secondary-1);
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: #fff;
+}
+
+.btn {
+  cursor: pointer;
+  height: 6rem;
+  font-size: 2.8rem;
+  font-weight: 600;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  filter: brightness(120%);
+}
+i {
+  transition: all 0.2s;
+  font-size: 2.4rem;
+}
+.btn:hover i {
+  transform: translateX(0.4rem);
+}
