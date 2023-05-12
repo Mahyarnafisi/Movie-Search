@@ -81,11 +81,12 @@ input:focus {
 }
 input::placeholder {
   transition: all 0.2s;
-  font-size: 2.4rem;
+  font-size: 2.1rem;
   color: #555;
 }
 input:focus::placeholder {
-  transform: translateY(-6rem);
+  transform: translateY(-2rem);
+  opacity: 0;
   color: #999;
 }
 
@@ -117,6 +118,9 @@ input:focus::placeholder {
 
 .btn:hover {
   filter: brightness(120%);
+}
+.btn:active{
+  filter: brightness(90%);
 }
 i {
   transition: all 0.2s;
