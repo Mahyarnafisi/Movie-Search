@@ -1,6 +1,6 @@
 :root {
   --color-primary-1: #302e33;
-  --color-secondary-1: #d00000;
+  --color-secondary-1: #d3d3d3;
 }
 
 html {
@@ -68,7 +68,7 @@ input {
   border: none;
   background-color: #242424;
   backdrop-filter: blur(10px);
-  color: #9999;
+  color: #999;
   padding: 2rem;
   transition: all 0.2s;
   display: flex;
@@ -91,7 +91,7 @@ input:focus::placeholder {
 }
 
 .input-group {
-  border-radius: 0.5rem 0 0 0.5rem;
+  border-radius: 1rem 0 0 1rem;
 }
 
 .btn-group {
@@ -99,16 +99,16 @@ input:focus::placeholder {
   /* border: 3px solid var(--color-secondary-1); */
   border: none;
   background-color: var(--color-secondary-1);
-  border-radius: 0 0.5rem 0.5rem 0;
-  color: #fff;
+  border-radius: 0 1rem 1rem 0;
+  color: #333;
 }
 
 .btn {
   cursor: pointer;
   height: 6rem;
-  font-size: 2.4rem;
+  font-size: 2.1rem; 
   font-weight: 600;
-  padding: 1.5rem;
+  padding: 1.5rem 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
