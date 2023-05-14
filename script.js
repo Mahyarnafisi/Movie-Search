@@ -8,11 +8,15 @@ const containerNotFound = document.querySelector(".not-found");
 
 const apiKey = "4fccaa42";
 
-// function for fetching from API---------
+// -----------------------------------------//
+
+// reloading btn in not-found section
 
 btnRefresh.addEventListener("click", () => {
   window.location.reload();
 });
+
+// function for fetching from API---------
 
 const getMovie = () => {
   const movieName = movieNameRef.value;
