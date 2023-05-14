@@ -46,9 +46,9 @@ body {
   justify-content: center;
   background-color: #ffffff25;
   backdrop-filter: blur(15px);
-  width:90vw;
+  width: 90vw;
   max-width: 70rem;
-  
+
   height: 50rem;
   padding: 2rem;
   border-radius: 2rem;
@@ -56,12 +56,20 @@ body {
   z-index: 110;
   animation: load-in 1s alternate;
 }
-/* !------------------------------------ */
+/* !--search container---------------------------------- */
+
+.search-container {
+  width: 100%;
+  /* border: 1px solid yellow; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* !----------------------------------- */
 input {
-  max-width: 100rem;
   width: 100%;
+  max-width: 100%;
   font-size: 2.8rem;
   height: 6rem;
   outline: none;
@@ -71,10 +79,6 @@ input {
   color: #999;
   padding: 2rem;
   transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
 }
 input:focus {
   background-color: #222;
@@ -105,30 +109,32 @@ input:focus::placeholder {
 
 .btn {
   cursor: pointer;
+  width: 30%;
+  min-width: 12rem;
   height: 6rem;
-  font-size: 2.1rem; 
+  font-size: 2.1rem;
   font-weight: 600;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  flex-shrink: 1;
   transition: all 0.2s;
 }
 
 .btn:hover {
   filter: brightness(120%);
 }
-.btn:active{
+.btn:active {
   filter: brightness(90%);
 }
 i {
   transition: all 0.2s;
   font-size: 2.1rem;
+  margin-left: 1rem;
 }
 .btn:hover i {
   transform: rotate(180deg);
-
 }
 
 /* ! Animations  */
@@ -141,4 +147,5 @@ i {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
 }
