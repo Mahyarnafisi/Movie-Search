@@ -29,6 +29,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  user-select: none;
 }
 /* !----------------------------------- */
 .container {
@@ -47,8 +48,8 @@ body {
   flex-direction: column;
   background-color: #ffffff25;
   backdrop-filter: blur(15px);
-  width: 90vw;
-  max-width: 70rem;
+  width: 100vw;
+  max-width: 80rem;
   transition: all 0.2s;
   height: min-content;
   padding: 2rem;
@@ -78,13 +79,13 @@ input {
   align-items: center;
   width: 100%;
   max-width: 100%;
-  font-size: 2.8rem;
+  font-size: 1.8rem;
   height: 6rem;
   outline: none;
   border: none;
   background-color: #242424;
   backdrop-filter: blur(10px);
-  color: #999;
+  color: #666;
   padding: 2rem;
   transition: all 0.2s;
 }
@@ -111,7 +112,7 @@ input:focus::placeholder {
 }
 
 .btn-group {
-  height: 6rem;
+  height: 5rem;
   /* border: 3px solid var(--color-secondary-1); */
   border: none;
   background-color: var(--color-secondary-1);
@@ -124,9 +125,9 @@ input:focus::placeholder {
   width: 30%;
   min-width: 12rem;
   height: 6rem;
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   font-weight: 600;
-  padding: 1.5rem 5rem;
+  padding: 1.5rem 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,6 +168,7 @@ i {
   align-items: flex-start;
   justify-content: space-between;
   font-size: 1.8rem;
+  gap: 2rem;
 }
 
 .info__img {
@@ -181,19 +183,25 @@ i {
 
 .info__detail {
   width: 50%;
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .info__title {
   font-size: 2.6rem;
   grid-column: 1/-1;
+  border-bottom: 2px solid #ffffff25;
+  padding: 0.5rem 0;
 }
 .info__title span {
   color: #ffffff75;
   font-size: 1.8rem;
+}
+
+.info__type {
+  grid-column: 1/-1;
 }
 .info__language {
   grid-column: 1/2;
@@ -211,12 +219,12 @@ i {
 
 .info__rate {
   grid-column: 1/-1;
-  font-size: 2.1rem;
+  font-size: 2.4rem;
 }
 
 .info__rate i {
   color: rgb(255, 238, 0);
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   margin-right: 0.5rem;
 }
 .info__plot {
@@ -233,9 +241,13 @@ i {
   grid-column: 1/-1;
 }
 
+.info__budget {
+  grid-column: 1/-1;
+}
+
 .info__key {
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 /* !---------------------------------- */
 .not-found {
