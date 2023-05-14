@@ -41,7 +41,7 @@ const getMovie = () => {
           containerResult.classList.add("animation-in");
           containerResult.classList.add("display");
           containerNotFound.classList.remove("display");
-          btnMahyarSign.classList.remove("no-display");
+          btnMahyarSign.classList.add("display");
 
           containerResult.innerHTML = `<div class="info">
           <div class="info__img" alt="movie poster">
@@ -78,4 +78,6 @@ window.addEventListener("keypress", (e) => {
   return;
 });
 
-btnMahyarSign.addEventListener("click", () => {});
+btnMahyarSign.addEventListener("click", () => {
+  containerMahyarBrand.classList.toggle("no-display");
+});
