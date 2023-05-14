@@ -50,6 +50,7 @@ const getMovie = () => {
               <p class="info__awards"><span class="info__key">Awarded:</span> ${data.Awards}</p>
               <p class="info__actors"><span class="info__key">Actors:</span> ${data.Actors}</p>
               <p class="info__budget"><span class="info__key">Budget:</span> ${data.BoxOffice}</p>
+              <button class="mahyarsign"><i class="bi bi-chevron-down"></i></button>
               
            </div>
           </div>
@@ -67,8 +68,4 @@ window.addEventListener("keypress", (e) => {
     getMovie();
   }
   return;
-});
-
-window.addEventListener("dblclick", (e) => {
-  window.location.reload();
 });
