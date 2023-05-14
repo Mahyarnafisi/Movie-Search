@@ -14,7 +14,7 @@ html {
 ::before {
   padding: 0;
   margin: 0;
-  line-height: 1;
+  line-height: 1.4;
   box-sizing: inherit;
 }
 
@@ -156,6 +156,86 @@ i {
   width: 100%;
   height: min-content;
   margin-top: 2rem;
+}
+
+/* !--Result section after search ------------------- */
+.info {
+  width: 100%;
+  position: relative;
+  /* border: 3px solid green; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 1.8rem;
+}
+
+.info__img {
+  width: 50%;
+}
+.info__poster {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 4rem #00000035;
+}
+
+.info__detail {
+  width: 50%;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.info__title {
+  font-size: 2.6rem;
+  grid-column: 1/-1;
+}
+.info__title span {
+  color: #ffffff75;
+  font-size: 1.8rem;
+}
+.info__language {
+  grid-column: 1/2;
+  font-size: 1.6rem;
+}
+.info__release {
+  grid-column: 2/3;
+  font-size: 1.6rem;
+}
+
+.info__duration {
+  grid-column: 3/4;
+  font-size: 1.6rem;
+}
+
+.info__rate {
+  grid-column: 1/-1;
+  font-size: 2.1rem;
+}
+
+.info__rate i {
+  color: rgb(255, 238, 0);
+  font-size: 1.4rem;
+  margin-right: 0.5rem;
+}
+.info__plot {
+  grid-column: 1/-1;
+  font-size: 1.4rem;
+}
+
+.info__awards {
+  font-size: 1.4rem;
+  grid-column: 1/-1;
+}
+.info__actors {
+  font-size: 1.6rem;
+  grid-column: 1/-1;
+}
+
+.info__key {
+  font-weight: 700;
+  font-size: 1.4rem;
 }
 /* !---------------------------------- */
 .not-found {
