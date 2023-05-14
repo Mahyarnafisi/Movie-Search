@@ -1,7 +1,7 @@
 "use strict";
 // --------------------------------------//
-let movieNameRef = document.getElementById("movie-name");
-let btnSearch = document.getElementById("btn-search");
+const movieNameRef = document.getElementById("movie-name");
+const btnSearch = document.getElementById("btn-search");
 const btnRefresh = document.querySelector(".btn-refresh");
 let containerResult = document.querySelector(".result");
 const containerNotFound = document.querySelector(".not-found");
@@ -25,6 +25,7 @@ const getMovie = () => {
     containerNotFound.classList.add("display");
     containerResult.classList.add("display");
   } else {
+    containerResult.classList.remove("display");
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
@@ -40,9 +41,9 @@ const getMovie = () => {
             </div>
            <div class="info__detail">
              <h3 class="info__title">${data.Title} <span>(${data.Year})</span> </h3>
-             <p class="info__type"><span class="info__key">Type:</span> ${data.Type}</p>
-             <p class="info__language"><span class="info__key">Language:</span> ${data.Language}</p>
-             <p class="info__release"><span class="info__key">Release:</span> ${data.Released}</p>
+              <p class="info__type"><span class="info__key">Type:</span> ${data.Type}</p>
+              <p class="info__language"><span class="info__key">Language:</span> ${data.Language}</p>
+               <p class="info__release"><span class="info__key">Release:</span> ${data.Released}</p>
               <p class="info__duration"><span class="info__key">Duration:</span> ${data.Runtime}</p>
               <p class="info__rate"><span class="info__key">imdb rate:</span> <i class="bi   bi-star-fill"></i>${data.imdbRating}</p>
               <p class="info__plot"><span class="info__key">Story:</span> ${data.Plot}</p>
@@ -59,7 +60,6 @@ const getMovie = () => {
 };
 
 // Button search handler---Click an dEnter---------------//
-
 btnSearch.addEventListener("click", getMovie);
 
 window.addEventListener("keypress", (e) => {
@@ -67,4 +67,8 @@ window.addEventListener("keypress", (e) => {
     getMovie();
   }
   return;
+});
+
+window.addEventListener("dblclick", (e) => {
+  window.location.reload();
 });

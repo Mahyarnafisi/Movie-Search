@@ -157,6 +157,8 @@ i {
   width: 100%;
   height: min-content;
   margin-top: 2rem;
+  animation: load-in 1s alternate;
+  transition: all 0.2s;
 }
 
 /* !--Result section after search ------------------- */
