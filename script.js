@@ -3,8 +3,10 @@
 const movieNameRef = document.getElementById("movie-name");
 const btnSearch = document.getElementById("btn-search");
 const btnRefresh = document.querySelector(".btn-refresh");
+const btnMahyarSign = document.querySelector(".mahyarsign");
 let containerResult = document.querySelector(".result");
 const containerNotFound = document.querySelector(".not-found");
+const containerMahyarBrand = document.querySelector(".mahyarbrand");
 const apiKey = "4fccaa42";
 
 // -----------------------------------------//
@@ -21,11 +23,13 @@ const getMovie = () => {
   let movieName = movieNameRef.value;
   let apiUrl = `http://www.omdbapi.com/?t=${movieName}&apikey=4fccaa42`;
 
-  if (movieName === "") {
+  if (movieName.length === 0) {
+    const containerInfo = document.querySelector(".info");
+    containerInfo.classList.add("no-display");
     containerNotFound.classList.add("display");
-    containerResult.classList.add("display");
+    containerMahyarBrand.classList.add("no-display");
+    btnMahyarSign.classList.add("no-display");
   } else {
-    containerResult.classList.remove("display");
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
@@ -34,7 +38,11 @@ const getMovie = () => {
           containerResult.classList.add("display");
         } else {
           console.log(data);
+          containerResult.classList.add("animation-in");
           containerResult.classList.add("display");
+          containerNotFound.classList.remove("display");
+          btnMahyarSign.classList.remove("no-display");
+
           containerResult.innerHTML = `<div class="info">
           <div class="info__img" alt="movie poster">
            <img src=${data.Poster} class="info__poster">
@@ -50,7 +58,7 @@ const getMovie = () => {
               <p class="info__awards"><span class="info__key">Awarded:</span> ${data.Awards}</p>
               <p class="info__actors"><span class="info__key">Actors:</span> ${data.Actors}</p>
               <p class="info__budget"><span class="info__key">Budget:</span> ${data.BoxOffice}</p>
-              <button class="mahyarsign"><i class="bi bi-chevron-down"></i></button>
+              
               
            </div>
           </div>
@@ -69,3 +77,5 @@ window.addEventListener("keypress", (e) => {
   }
   return;
 });
+
+btnMahyarSign.addEventListener("click", () => {});

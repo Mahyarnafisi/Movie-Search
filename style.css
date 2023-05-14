@@ -57,7 +57,7 @@ body {
   box-shadow: 0 2rem 6rem #00000055;
   z-index: 110;
   animation: load-in 1s alternate;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 /* !--search container---------------------------------- */
 
@@ -252,9 +252,9 @@ i {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -316,21 +316,58 @@ i {
   transform: rotate(360deg);
 }
 
+.mahyarbrand {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -8rem;
+  font-size: 1.6rem;
+  right: 0;
+  width: 35%;
+  height: 6rem;
+  border-radius: 1rem;
+  padding: 2rem;
+  background-color: #121212;
+  /* margin-top: 2rem; */
+}
 /* !---------------------------------- */
 .display {
   display: flex;
+}
+
+.no-display {
+  display: none;
 }
 /* ! Animations  */
 
 @keyframes load-in {
   0% {
     opacity: 0;
-    height: min-content;
     /* transform: translateY(10rem); */
   }
   100% {
     opacity: 1;
-    height: min-content;
+
     /* transform: translateY(0); */
   }
+}
+
+@keyframes load-out {
+  0% {
+    opacity: 1;
+
+    /* transform: translateY(10rem); */
+  }
+  100% {
+    opacity: 0;
+
+    /* transform: translateY(0); */
+  }
+}
+.animation-in {
+  animation: load-in 1s alternate;
+}
+.animation-out {
+  animation: load-out 1s alternate;
 }
