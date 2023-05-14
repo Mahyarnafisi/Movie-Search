@@ -74,6 +74,8 @@ body {
 }
 
 input {
+  display: flex;
+  align-items: center;
   width: 100%;
   max-width: 100%;
   font-size: 2.8rem;
@@ -85,6 +87,10 @@ input {
   color: #999;
   padding: 2rem;
   transition: all 0.2s;
+}
+
+input:hover {
+  filter: brightness(105%);
 }
 input:focus {
   background-color: #222;
