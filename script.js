@@ -18,9 +18,8 @@ btnRefresh.addEventListener("click", () => {
 // function for fetching from API---------//
 
 const getMovie = () => {
-  const movieName = movieNameRef.value;
-  const apiUrl = `https://www.omdbapi.com/?i=${movieName}&apikey=${apiKey}`;
-  console.log(apiUrl);
+  let movieName = movieNameRef.value;
+  let apiUrl = `https://www.omdbapi.com/?i=${movieName}&apikey=${apiKey}`;
 
   if (movieName === "") {
     containerNotFound.classList.add("display");
@@ -30,14 +29,11 @@ const getMovie = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.Response === "False") {
+          console.log(data);
           containerNotFound.classList.add("display");
           containerResult.classList.add("display");
         } else {
-          containerResult.innerHTML = `<div class="info">
-          <img src=${data.Poster} class="poster">
-          </div>
-          <h2>${data.Title}</h2>
-          `;
+          console.log(data.Response);
         }
       });
   }
@@ -45,14 +41,11 @@ const getMovie = () => {
 
 // Button search handler---Click an dEnter---------------//
 
-btnSearch.addEventListener("click", () => {
-  getMovie();
-});
+btnSearch.addEventListener("click", getMovie);
 
-const keyRefresh = window.addEventListener("keypress", (e) => {
-  if (e === "Enter") {
+window.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
     getMovie();
-  } else {
-    return;
   }
+  return;
 });
