@@ -29,16 +29,21 @@ const getMovie = () => {
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
-        if (data.Response === "True") {
-          console.log(data);
+        if (data.Response === "False") {
+          containerNotFound.classList.add("display");
+          containerResult.classList.add("display");
         } else {
-          console.log("no data");
+          containerResult.innerHTML = `<div class="info">
+          <img src=${data.Poster} class="poster">
+          </div>
+          <h2>${data.Title}</h2>
+          `;
         }
       });
   }
 };
 
-// Button search handler-----------------------//
+// Button search handler---Click an dEnter---------------//
 
 btnSearch.addEventListener("click", () => {
   getMovie();
