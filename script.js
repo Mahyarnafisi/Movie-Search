@@ -27,8 +27,9 @@ const getMovie = () => {
     const containerInfo = document.querySelector(".info");
     containerInfo.classList.add("no-display");
     containerNotFound.classList.add("display");
-    containerMahyarBrand.classList.add("no-display");
-    btnMahyarSign.classList.add("no-display");
+    // containerMahyarBrand.classList.add("no-display");
+    containerResult.classList.remove("display");
+    btnMahyarSign.classList.remove("display");
   } else {
     fetch(apiUrl)
       .then((response) => response.json())
@@ -79,5 +80,16 @@ window.addEventListener("keypress", (e) => {
 });
 
 btnMahyarSign.addEventListener("click", () => {
-  containerMahyarBrand.classList.toggle("no-display");
+  if (containerMahyarBrand.classList.contains("no-display")) {
+    containerMahyarBrand.classList.remove("animation-out");
+    containerMahyarBrand.classList.remove("no-display");
+    containerMahyarBrand.classList.add("animation-in");
+    containerMahyarBrand.classList.add("display");
+  } else {
+    containerMahyarBrand.classList.remove("animation-in");
+    containerMahyarBrand.classList.remove("display");
+    containerMahyarBrand.classList.add("animation-out");
+    containerMahyarBrand.classList.add("no-display");
+  }
+  return;
 });
