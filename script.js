@@ -81,15 +81,8 @@ window.addEventListener("keypress", (e) => {
 
 btnMahyarSign.addEventListener("click", () => {
   if (containerMahyarBrand.classList.contains("no-display")) {
-    containerMahyarBrand.classList.remove("animation-out");
-    containerMahyarBrand.classList.remove("no-display");
-    containerMahyarBrand.classList.add("animation-in");
-    containerMahyarBrand.classList.add("display");
+    containerMahyarBrand.classList.replace("no-display", "display");
   } else {
-    containerMahyarBrand.classList.remove("animation-in");
-    containerMahyarBrand.classList.remove("display");
-    containerMahyarBrand.classList.add("animation-out");
-    containerMahyarBrand.classList.add("no-display");
+    containerMahyarBrand.classList.replace("display", "no-display");
   }
-  return;
 });
