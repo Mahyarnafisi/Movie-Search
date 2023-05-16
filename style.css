@@ -329,6 +329,7 @@ i {
   border-radius: 1rem;
   padding: 2rem;
   background-color: #121212;
+  z-index: 1;
   /* margin-top: 2rem; */
 }
 /* !---------------------------------- */
@@ -347,12 +348,9 @@ i {
 @keyframes load-in {
   0% {
     opacity: 0;
-    /* transform: translateY(10rem); */
   }
   100% {
     opacity: 1;
-
-    /* transform: translateY(0); */
   }
 }
 
